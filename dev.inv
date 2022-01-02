@@ -1,2 +1,7 @@
-[webservers]
+[winservers]
 18.221.19.232 ansible_user=administrator
+
+[winservers:vars]
+ansible_user=ansible_user
+ansible_coonection=winrm
+ansible_winrm_server_cert_validation=ignore

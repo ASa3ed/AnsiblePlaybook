@@ -1,5 +1,5 @@
 ---
-- hosts: webservers 
+- hosts: winservers 
   become: True
   tasks:
     # Install/uninstall with chocolatey
