@@ -2,17 +2,20 @@
 - hosts: webservers 
   become: True
   tasks:
-    - name: Install packages
-      yum:
-        name: "httpd"
-        state: "present"
-    - name: Start Apache server
-      service:
-        name: httpd
-        state: started
-        enabled: True
-    - name: Deploy static website
-      copy:
-        src: index.html
-        dest: /var/www/html/
+    # Install/uninstall with chocolatey
+    - name: Ensure 7-Zip is installed via Chocolatey
+      win_chocolatey:
+        name: 7zip
+        state: present
+
+    - name: Ensure 7-Zip is not installed via Chocolatey
+      win_chocolatey:
+        name: 7zip
+        state: absent
+
+    # Install/uninstall with win_package
+    - name: Download the 7-Zip package
+      win_get_url:
+        url: https://www.7-zip.org/a/7z1701-x64.msi
+        dest: C:\temp\7z.msi
 ...
