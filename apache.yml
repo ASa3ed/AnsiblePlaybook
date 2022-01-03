@@ -1,6 +1,5 @@
 ---
 - hosts: winservers 
-  become: True
   tasks:
     # Install/uninstall with chocolatey
     - name: Ensure 7-Zip is installed via Chocolatey
@@ -13,9 +12,4 @@
         name: 7zip
         state: absent
 
-    # Install/uninstall with win_package
-    - name: Download the 7-Zip package
-      win_get_url:
-        url: https://www.7-zip.org/a/7z1701-x64.msi
-        dest: C:\temp\7z.msi
 ...
