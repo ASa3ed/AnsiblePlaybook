@@ -13,7 +13,7 @@
         dest: C:\inetpub\wwwroot
     # Unzip .zip file, recursively decompresses the contained .gz files and removes all unneeded compressed files after completion.
     - name: Recursively decompress Artifacts files in wwwroot directory
-      community.windows.win_unzip:
+      win_unzip:
         src: C:\inetpub\wwwroot\*.zip
         dest: C:\inetpub\wwwroot\
         recurse: yes
