@@ -8,7 +8,7 @@
         state: present
     # Copy folder contents recursively
     - name: Copy Artifact Folder
-      ansible.windows.win_copy:
+      win_copy:
         src: bin/Debug/net6.0/publish/
         dest: C:\inetpub\wwwroot
     # # Start a website
