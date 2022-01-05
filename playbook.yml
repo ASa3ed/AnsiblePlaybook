@@ -7,10 +7,17 @@
         name: 7zip
         state: present
     # Copy folder contents recursively
-    - name: Copy Artifact Folder
+    - name: Copy Artifacts
       win_copy:
-        src: bin/Debug/net6.0/publish/
+        src: *.zip
         dest: C:\inetpub\wwwroot
+    # Unzip .zip file, recursively decompresses the contained .gz files and removes all unneeded compressed files after completion.
+    - name: Recursively decompress Artifacts files in wwwroot directory
+      community.windows.win_unzip:
+        src: C:\inetpub\wwwroot\*.zip
+        dest: C:\inetpub\wwwroot\
+        recurse: yes
+        delete_archive: yes
     # # Start a website
     # - name: newMVC IIS site
     #   win_iis_website:
