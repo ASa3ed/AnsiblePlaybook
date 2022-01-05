@@ -6,34 +6,22 @@
       win_chocolatey:
         name: 7zip
         state: present
-    # # Install PSCX for powershell commands
-    # - name: Install PSCX
-    #   win_psmodule:
-    #     name: Pscx
-    #     state: present
     # Copy folder contents recursively
     - name: Copy Artifacts
       win_copy:
         src:  bin/Debug/net6.0/publish/
         dest: C:\inetpub\wwwroot
-    # # Unzip .zip file, recursively decompresses the contained .gz files and removes all unneeded compressed files after completion.
-    # - name: Recursively decompress Artifacts files in wwwroot directory
-    #   win_unzip:
-    #     src: C:\inetpub\wwwroot\newMVC.zip
-    #     dest: C:\inetpub\wwwroot
-    #     recurse: yes
-    #     delete_archive: yes
-    # # Start a website
-    # - name: newMVC IIS site
-    #   win_iis_website:
-    #     name: newMVC
-    #     state: started
-    #     port: 80
-    #     ip: 127.0.0.1
-    #     hostname: newmvc.local
-    #     application_pool: newMVC
-    #     physical_path: C:\sites\newMVC
-    #     parameters: logfile.directory:C:\sites\logs
-    #   register: website
+    # Start a website
+    - name: newMVC IIS site
+      win_iis_website:
+        name: newMVC
+        state: started
+        port: 80
+        ip: 127.0.0.1
+        hostname: newmvc.local
+        application_pool: newMVC
+        physical_path: C:\sites\newMVC
+        parameters: logfile.directory:C:\sites\logs
+      register: website
 
 ...
