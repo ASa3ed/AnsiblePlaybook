@@ -20,8 +20,8 @@
         ip: 127.0.0.1
         hostname: newmvc.local
         application_pool: newMVC
-        physical_path: C:\sites\newMVC
-        parameters: logfile.directory:C:\sites\logs
+        physical_path: C:\inetpub\wwwroot\newMVC
+        parameters: logfile.directory:C:\inetpub\wwwroot\newMVC
       register: website
 
 ...
