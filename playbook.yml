@@ -23,10 +23,8 @@
         state: started
         port: 80
         ip: 127.0.0.1
-        hostname: newmvc.local
         application_pool: newMVC
         physical_path: C:\inetpub\wwwroot
-        parameters: web.config:C:\inetpub\wwwroot
       register: website
 
 ...
