@@ -8,7 +8,7 @@
         state: present
     # Copy folder contents recursively
     - name: Copy Artifacts
-      win_copy:
+      ansible.windows.win_copy:
         src: *.zip
         dest: C:\inetpub\wwwroot
     # Unzip .zip file, recursively decompresses the contained .gz files and removes all unneeded compressed files after completion.
