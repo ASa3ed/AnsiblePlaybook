@@ -10,11 +10,11 @@
     - name: Copy Artifacts
       win_copy:
         src: newMVC.zip
-        dest: C:\inetpub\wwwroot
+        dest: C:\inetpub\wwwroot\newMVC.zip
     # Unzip .zip file, recursively decompresses the contained .gz files and removes all unneeded compressed files after completion.
     - name: Recursively decompress Artifacts files in wwwroot directory
       win_unzip:
-        src: C:\inetpub\wwwroot\*.zip
+        src: C:\inetpub\wwwroot\newMVC.zip
         dest: C:\inetpub\wwwroot\
         recurse: yes
         delete_archive: yes
