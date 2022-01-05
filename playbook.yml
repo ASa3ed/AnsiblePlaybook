@@ -26,7 +26,7 @@
         hostname: newmvc.local
         application_pool: newMVC
         physical_path: C:\inetpub\wwwroot
-        parameters: web.config:C:\inetpub\wwwroot\newMVC
+        parameters: web.config:C:\inetpub\wwwroot
       register: website
 
 ...
