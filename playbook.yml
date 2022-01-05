@@ -25,7 +25,7 @@
         ip: 127.0.0.1
         hostname: newmvc.local
         application_pool: newMVC
-        physical_path: C:\inetpub\wwwroot\newMVC
+        physical_path: C:\inetpub\wwwroot
         parameters: web.config:C:\inetpub\wwwroot\newMVC
       register: website
 
