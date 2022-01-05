@@ -6,6 +6,11 @@
       win_chocolatey:
         name: 7zip
         state: present
+    # Install PSCX for powershell commands
+    - name: Install PSCX
+      win_psmodule:
+        name: Pscx
+        state: present
     # Copy folder contents recursively
     - name: Copy Artifacts
       win_copy:
@@ -15,7 +20,7 @@
     - name: Recursively decompress Artifacts files in wwwroot directory
       win_unzip:
         src: C:\inetpub\wwwroot\newMVC.zip
-        dest: C:\inetpub\wwwroot\
+        dest: C:\inetpub\wwwroot
         recurse: yes
         delete_archive: yes
     # # Start a website
