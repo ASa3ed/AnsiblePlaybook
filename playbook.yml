@@ -10,7 +10,7 @@
     - name: Copy Artifacts
       win_copy:
         src:  bin/Debug/net6.0/publish/
-        dest: C:\inetpub\wwwroot
+        dest: C:\inetpub\wwwroot\newMVC
     # Start a website
     - name: newMVC IIS site
       win_iis_website:
