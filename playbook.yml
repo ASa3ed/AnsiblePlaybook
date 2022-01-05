@@ -10,7 +10,7 @@
     - name: Copy Artifacts
       win_copy:
         src:  bin/Debug/net6.0/publish/
-        dest: C:\inetpub\wwwroot\newMVC
+        dest: C:\inetpub\wwwroot
     # # Remove Default Web Site and the standard port 80 binding
     # - name: Remove Default Web Site
     #   win_iis_website:
