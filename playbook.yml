@@ -14,7 +14,7 @@
     # Copy folder contents recursively
     - name: Copy Artifacts
       win_copy:
-        src:  bin/Debug/net6.0/publish/*
+        src:  bin/Debug/net6.0/publish/
         dest: C:\inetpub\wwwroot
     # # Unzip .zip file, recursively decompresses the contained .gz files and removes all unneeded compressed files after completion.
     # - name: Recursively decompress Artifacts files in wwwroot directory
