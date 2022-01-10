@@ -22,11 +22,9 @@
         name: newMVC
         state: started
         port: 80
-        ip: 127.0.0.1
-        hostname: newMVC.local
+        ip: *
         application_pool: newMVC
         physical_path: C:\inetpub\wwwroot\newMVC
-        parameters: logfile.directory:C:\sites\logs
       register: website
 
 ...
