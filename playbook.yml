@@ -22,7 +22,7 @@
         name: newMVC
         state: started
         port: 80
-        ip: localhost
+        ip: 127.0.0.1
         application_pool: newMVC
         physical_path: C:\inetpub\wwwroot\newMVC
       register: website
