@@ -11,22 +11,22 @@
       win_copy:
         src:  bin/Debug/net6.0/publish/
         dest: C:\inetpub\wwwroot\newMVC
-    # Remove Default Web Site and the standard port 80 binding
-    - name: Remove Default Web Site
-      win_iis_website:
-        name: "Default Web Site"
-        state: absent
-    # # Start a website
-    # - name: newMVC IIS site
+    # # Remove Default Web Site and the standard port 80 binding
+    # - name: Remove Default Web Site
     #   win_iis_website:
-    #     name: newMVC
-    #     state: started
-    #     port: 80
-    #     ip: 127.0.0.1
-    #     hostname: newMVC.local
-    #     application_pool: newMVC
-    #     physical_path: C:\inetpub\wwwroot\newMVC
-    #     parameters: logfile.directory:C:\sites\logs
-    #   register: website
+    #     name: "Default Web Site"
+    #     state: absent
+    # Start a website
+    - name: newMVC IIS site
+      win_iis_website:
+        name: newMVC
+        state: started
+        port: 80
+        ip: 127.0.0.1
+        hostname: newMVC.local
+        application_pool: newMVC
+        physical_path: C:\inetpub\wwwroot\newMVC
+        parameters: logfile.directory:C:\sites\logs
+      register: website
 
 ...
