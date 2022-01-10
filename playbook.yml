@@ -16,6 +16,11 @@
     #   win_iis_website:
     #     name: "Default Web Site"
     #     state: absent
+    # Create a new application pool in 'Started' state
+    - name: Create a new App Pool
+      win_iis_webapppool:
+        name: newMVC
+        state: started
     # Start a website
     - name: newMVC IIS site
       win_iis_website:
