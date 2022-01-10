@@ -1,7 +1,7 @@
 pipeline {
    
     agent {
-      label 'DockerNode'
+      label 'UbuntuDevTest'
     } 
 
     stages {
